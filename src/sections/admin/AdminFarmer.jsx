@@ -4,6 +4,9 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import { styled } from '@mui/material/styles';
+// import Alert from '@mui/material/Alert';
+// import CheckIcon from '@mui/icons-material/Check';
+
 
 import FarmerCard from '../farmer/card';
 
@@ -17,23 +20,32 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const messages = [
-  { sender: 'Alice', content: <FarmerCard/> },
-  { sender: 'Bob', content: 'Hey! How are you?' },
-];
-
 const AdminFarmer = () => {
+  
   const [selectedSender, setSelectedSender] = useState(null);
 
+
+
+  
   const handleSenderClick = (sender) => {
     setSelectedSender(sender);
   };
+
+
+const messages = [
+  { sender: 'Alice', content: <FarmerCard/> },
+  { sender: 'Bob', content: 'Hey! How are you?' },
+  
+];
+
+ 
 
   return (
     <Stack direction="row" divider={<Divider orientation="vertical" flexItem />} sx={{ height: '100%', overflowY: 'auto' }}>
       <Item sx={{ flex: '0 0 30%', minWidth: '200px', maxHeight: '80vh', overflowY: 'auto' }}>
         <div className="message-list-container">
           <div className="message-list">
+          
             {messages.map((message, index) => (
               <div 
                 key={index} 
@@ -55,9 +67,20 @@ const AdminFarmer = () => {
                 <div className="message-sender">{message.sender}</div>
               </div>
             ))}
+            
+            
+            
           </div>
-        </div>
+            
+            
+          </div>
+          
       </Item>
+
+      {/* <Item sx={{ flex: '0 0 10%' }}>
+        <Button variant="contained" sx={{ width: '100%' }}>Send</Button>
+      </Item> */}
+
       <Item sx={{ flex: '0 0 70%' }}>
 
         <div className="message-list-container">
