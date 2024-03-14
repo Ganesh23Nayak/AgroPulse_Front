@@ -23,8 +23,8 @@ export default function Header() {
     <Wrapper id="home" className="container  flexSpaceCenter">
       <LeftSide className="flexCenter ">
         <div>
-          <h1 className="extraBold font60 textBg">Planting Tommorow&apos;s Harvest, Today! </h1>
-          <HeaderP className="font20 semiBold ">
+          <h1 className="extraBold font60 textBg">Empowering the Backbone of a Growing India </h1>
+          <HeaderP className="font20 semiBold whiteColor ">
           Welcome to AgroPulse, where modern convenience meets traditional farming expertise.
           </HeaderP>
           {/* <BtnWrapper>

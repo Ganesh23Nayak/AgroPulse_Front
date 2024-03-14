@@ -3,18 +3,29 @@ import React from "react";
 // import { Button } from "react-scroll";
 import styled from "styled-components";
 
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
 // import PositionedSnackbar from "./Alert";
 // Assets
-import ContactImg1 from "../../assets/img/contact-1.png";
-import ContactImg2 from "../../assets/img/contact-2.png";
-import ContactImg3 from "../../assets/img/contact-3.png";
-
+// import ContactImg1 from "../../assets/img/contact-1.png";
+// import ContactImg2 from "../../assets/img/contact-2.png";
+// import ContactImg3 from "../../assets/img/contact-3.png";
 
 export default function Contact() {
-  const handleButtonClick = () => {
-    // <PositionedSnackbar/>
-    alert("Thank you for your feedback!");
-  }
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Wrapper id="contact">
       <div className="lightBg">
@@ -39,10 +50,26 @@ export default function Contact() {
                 <textarea rows="1" cols="10" type="text" id="message" name="message" className="font20 " style={{resize: "none"}}/>
               </Form>
               <SumbitWrapper className="flex">
-                <ButtonInput type="submit" value="Send Message" className="pointer animate radius8" style={{ maxWidth: "220px" }} onClick={handleButtonClick}/>
+                <ButtonInput type="submit" value="Send Message" className="pointer animate radius8" style={{ maxWidth: "220px" }} onClick={handleClickOpen}/>
               </SumbitWrapper>
+              <Dialog
+        open={open}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle style={{color:"green"}}>Confirmation Message</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description" >
+            Message Sent Successfully!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} >Close</Button>
+        </DialogActions>
+      </Dialog>
             </div>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
+            {/* <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
               <div style={{ width: "50%" }} className="flexNullCenter flexColumn">
                 <ContactImgBox>
                   <img src={ContactImg1} alt="office" className="radius6" />
@@ -56,10 +83,11 @@ export default function Contact() {
                   <img src={ContactImg3} alt="office" className="radius6" />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
+      
       
     </Wrapper>
   );
@@ -109,11 +137,6 @@ const ButtonInput = styled.input`
   @media (max-width: 991px) {
     margin: 0 auto;
   }
-`;
-const ContactImgBox = styled.div`
-  max-width: 180px; 
-  align-self: flex-end; 
-  margin: 10px 30px 10px 0;
 `;
 const SumbitWrapper = styled.div`
   @media (max-width: 991px) {

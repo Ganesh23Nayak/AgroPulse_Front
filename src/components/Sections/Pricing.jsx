@@ -12,13 +12,13 @@ export default function Pricing() {
         <div className="container">
           <HeaderInfo>
             <h1 className="font40 extraBold">Check Our Pricing</h1>
-            <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+            <p className="font20">
+              The Current Pricing as of Now
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              Get Market Leading Prices Customized For You!!!
             </p>
           </HeaderInfo>
-          <TablesWrapper className="flexSpaceNull">
+          <TablesWrapper className="flexSpaceNull" style={{ justifyContent: "center" }}>
             <TableBox>
               <PricingTable
                 icon="roller"
@@ -29,19 +29,10 @@ export default function Pricing() {
                   { offer: "Product Offer", cheked: true },
                 ]}
                 action={() => alert("clicked")}
+              
               />
             </TableBox>
-            <TableBox>
-            <div style={{textAlign:"center", marginTop:"50%"}} className="glassContainer">
-                To Be Added
-            </div>
-
-            </TableBox>
-            <TableBox>
-            <div style={{ padding: "50% 50%" }}>
-                To Be Added
-              </div>
-            </TableBox>
+            
           </TablesWrapper>
         </div>
       </div>
