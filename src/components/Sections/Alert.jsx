@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
-import IconButton from '@mui/material/IconButton';
 
 export default function SimpleSnackbar() {
   const [open, setOpen] = React.useState(false);

@@ -4,15 +4,15 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 
-import Iconify from 'src/components/iconify';
+// import Iconify from 'src/components/iconify';
 
-import AppTasks from '../app-tasks';
+// import AppTasks from '../app-tasks';
 import AppNewsUpdate from '../app-news-update';
 import AppOrderTimeline from '../app-order-timeline';
 import AppCurrentVisits from '../app-current-visits';
 import AppWebsiteVisits from '../app-website-visits';
 import AppWidgetSummary from '../app-widget-summary';
-import AppTrafficBySite from '../app-traffic-by-site';
+// import AppTrafficBySite from '../app-traffic-by-site';
 import AppCurrentSubject from '../app-current-subject';
 import AppConversionRates from '../app-conversion-rates';
 
@@ -119,22 +119,180 @@ export default function AppView() {
         </Grid>
 
         <Grid xs={12} md={6} lg={8}>
-          <AppConversionRates
-            title="Conversion Rates"
-            subheader="(+43%) than last year"
-            chart={{
-              series: [
-                { label: 'Italy', value: 400 },
-                { label: 'Japan', value: 430 },
-                { label: 'China', value: 448 },
-                { label: 'Canada', value: 470 },
-                { label: 'France', value: 540 },
-                { label: 'Germany', value: 580 },
-                { label: 'South Korea', value: 690 },
-                { label: 'Netherlands', value: 1100 },
-                { label: 'United States', value: 1200 },
-                { label: 'United Kingdom', value: 1380 },
-              ],
+        <AppConversionRates
+  title="Conversion Rates"
+  subheader="(+43%) than last year"
+  chart={{
+    series: [
+                {
+                  district: "Tumkur",
+                  market: "Tumkur",
+                  variety: "Sona",
+                  modal_price: 2050
+                },
+                {
+                  district: "Tumkur",
+                  market: "Tumkur",
+                  variety: "Paddy",
+                  modal_price: 1700
+                },
+                {
+                  district: "Shimoga",
+                  market: "Sorabha",
+                  variety: "Paddy",
+                  modal_price: 2250
+                },
+                {
+                  district: "Raichur",
+                  market: "Sindhanur",
+                  variety: "Sona",
+                  modal_price: 1800
+                },
+                {
+                  district: "Raichur",
+                  market: "Raichur",
+                  variety: "Rajahamsa",
+                  modal_price: 1885
+                },
+                {
+                  district: "Belgaum",
+                  market: "Nandagada",
+                  variety: "Paddy",
+                  modal_price: 2200
+                },
+                {
+                  district: "Mysore",
+                  market: "Mysore (Bandipalya)",
+                  variety: "Paddy",
+                  modal_price: 2602
+                },
+                {
+                  district: "Karwar(Uttar Kannad)",
+                  market: "Mundgod",
+                  variety: "Sanna Bhatta",
+                  modal_price: 2600
+                },
+                {
+                  district: "Tumkur",
+                  market: "Madhugiri",
+                  variety: "Hansa",
+                  modal_price: 2250
+                },
+                {
+                  district: "Raichur",
+                  market: "Lingasugur",
+                  variety: "Sona Mahsuri",
+                  modal_price: 3100
+                },
+                {
+                  district: "Koppal",
+                  market: "Kustagi",
+                  variety: "Paddy",
+                  modal_price: 2300
+                },
+                {
+                  district: "Kalburgi",
+                  market: "Kalburgi",
+                  variety: "Paddy",
+                  modal_price: 2850
+                },
+                {
+                  district: "Mysore",
+                  market: "K.R.Nagar",
+                  variety: "Paddy Dappa",
+                  modal_price: 2200
+                },
+                {
+                  district: "Mysore",
+                  market: "K.R.Nagar",
+                  variety: "Paddy Medium",
+                  modal_price: 2355
+                },
+                {
+                  district: "Davangere",
+                  market: "Harihara",
+                  variety: "Sona",
+                  modal_price: 2500
+                },
+                {
+                  district: "Karwar(Uttar Kannad)",
+                  market: "Haliyala",
+                  variety: "Paddy Medium",
+                  modal_price: 2400
+                },
+                {
+                  district: "Koppal",
+                  market: "Gangavathi",
+                  variety: "I.R. 64",
+                  modal_price: 2193
+                },
+                {
+                  district: "Davangere",
+                  market: "Davangere",
+                  variety: "Paddy Medium",
+                  modal_price: 3060
+                },
+                {
+                  district: "Chikmagalur",
+                  market: "Chikkamagalore",
+                  variety: "Paddy fine",
+                  modal_price: 2650
+                },
+                {
+                  district: "Shimoga",
+                  market: "Bhadravathi",
+                  variety: "Sanna Bhatta",
+                  modal_price: 3160
+                },
+                {
+                  district: "Shimoga",
+                  market: "Bhadravathi",
+                  variety: "Paddy Medium",
+                  modal_price: 2759
+                },
+                {
+                  district: "Hassan",
+                  market: "Belur",
+                  variety: "Paddy",
+                  modal_price: 2500
+                },
+                {
+                  district: "Bellary",
+                  market: "Bellary",
+                  variety: "Sona",
+                  modal_price: 2883
+                },
+                {
+                  district: "Bellary",
+                  market: "Bellary",
+                  variety: "Paddy Medium",
+                  modal_price: 1821
+                },
+                {
+                  district: "Bellary",
+                  market: "Bellary",
+                  variety: "Paddy fine",
+                  modal_price: 2016
+                },
+                {
+                  district: "Mangalore(Dakshin Kannad)",
+                  market: "Bantwala",
+                  variety: "Jaya",
+                  modal_price: 2300
+                },
+                {
+                  district: "Kolar",
+                  market: "Bangarpet",
+                  variety: "Paddy Medium",
+                  modal_price: 2400
+                },
+                {
+                  district: "Bangalore",
+                  market: "Bangalore",
+                  variety: "Paddy",
+                  modal_price: 3000
+                }
+              ]
             }}
           />
         </Grid>
@@ -184,46 +342,9 @@ export default function AppView() {
           />
         </Grid>
 
-        <Grid xs={12} md={6} lg={4}>
-          <AppTrafficBySite
-            title="Traffic by Site"
-            list={[
-              {
-                name: 'FaceBook',
-                value: 323234,
-                icon: <Iconify icon="eva:facebook-fill" color="#1877F2" width={32} />,
-              },
-              {
-                name: 'Google',
-                value: 341212,
-                icon: <Iconify icon="eva:google-fill" color="#DF3E30" width={32} />,
-              },
-              {
-                name: 'Linkedin',
-                value: 411213,
-                icon: <Iconify icon="eva:linkedin-fill" color="#006097" width={32} />,
-              },
-              {
-                name: 'Twitter',
-                value: 443232,
-                icon: <Iconify icon="eva:twitter-fill" color="#1C9CEA" width={32} />,
-              },
-            ]}
-          />
-        </Grid>
+        
 
-        <Grid xs={12} md={6} lg={8}>
-          <AppTasks
-            title="Tasks"
-            list={[
-              { id: '1', name: 'Create FireStone Logo' },
-              { id: '2', name: 'Add SCSS and JS files if required' },
-              { id: '3', name: 'Stakeholder Meeting' },
-              { id: '4', name: 'Scoping & Estimations' },
-              { id: '5', name: 'Sprint Showcase' },
-            ]}
-          />
-        </Grid>
+        
       </Grid>
     </Container>
   );
