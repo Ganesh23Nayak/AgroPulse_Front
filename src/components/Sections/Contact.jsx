@@ -1,39 +1,45 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
+// import { Button } from "react-scroll";
 import styled from "styled-components";
 
-// import VismeForm from "./Contacts";
+// import PositionedSnackbar from "./Alert";
 // Assets
 import ContactImg1 from "../../assets/img/contact-1.png";
 import ContactImg2 from "../../assets/img/contact-2.png";
 import ContactImg3 from "../../assets/img/contact-3.png";
 
+
 export default function Contact() {
+  const handleButtonClick = () => {
+    // <PositionedSnackbar/>
+    alert("Thank you for your feedback!");
+  }
   return (
     <Wrapper id="contact">
       <div className="lightBg">
         <div className="container">
           <HeaderInfo>
             <h1 className="font40 extraBold">Lets get in touch</h1>
-            <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+            <p className="font16 semiBold" style={{maxWidth: "800px"}}>
+            This contact form offers ways for clients to reach out to us. It is where clients can ask questions, provide feedback, or seek support and also confirm their subscription.
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
             </p>
           </HeaderInfo>
           <div className="row" style={{ paddingBottom: "30px" }}>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <Form>
-                <label htmlFor="fname" className="font13">First name:</label>
-                <input type="text" id="fname" name="fname" className="font20 extraBold" />
-                <label htmlFor="email" className="font13">Email:</label>
-                <input type="text" id="email" name="email" className="font20 extraBold" />
-                <label htmlFor="subject" className="font13">Subject:</label>
-                <input type="text" id="subject" name="subject" className="font20 extraBold" />
-                <textarea rows="4" cols="50" type="text" id="message" name="message" className="font20 extraBold" />
+                <label htmlFor="fname" className="font16">Full Name:</label>
+                <input type="text" id="fname" name="fname" className="font20 extraBold" required />
+                <label htmlFor="email" className="font16">Email:</label>
+                <input type="text" id="email" name="email" className="font20 extraBold" required/>
+                <label htmlFor="phone" className="font16">Phone:</label>
+                <input type="numeric" id="phone" name="phone" className="font20 semiBold" required />
+                <label htmlFor="message" className="font16">Message:</label>
+                <textarea rows="1" cols="10" type="text" id="message" name="message" className="font20 " style={{resize: "none"}}/>
               </Form>
               <SumbitWrapper className="flex">
-                <ButtonInput type="submit" value="Send Message" className="pointer animate radius8" style={{ maxWidth: "220px" }} />
+                <ButtonInput type="submit" value="Send Message" className="pointer animate radius8" style={{ maxWidth: "220px" }} onClick={handleButtonClick}/>
               </SumbitWrapper>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
