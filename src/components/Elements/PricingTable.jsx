@@ -1,6 +1,7 @@
-import React from "react";
 import PropTypes from 'prop-types';
+import { Link } from "react-scroll";
 import styled from "styled-components";
+import React, { useState, useEffect } from "react";
 
 // Components
 import FullButton from "../Buttons/FullButton";
@@ -11,7 +12,18 @@ import MonitorIcon from "../../assets/svg/Services/MonitorIcon";
 import BrowserIcon from "../../assets/svg/Services/BrowserIcon";
 import PrinterIcon from "../../assets/svg/Services/PrinterIcon";
 
+
+
 export default function PricingTable({ icon, price, title, text,  offers, action }) {
+  const [y, setY] = useState(window.scrollY);
+  // const router = useNavigate();
+  // const path = window.location.pathname;
+  useEffect(() => {
+    window.addEventListener("scroll", () => setY(window.scrollY));
+    return () => {
+      window.removeEventListener("scroll", () => setY(window.scrollY));
+    };
+  }, [y]);
   let getIcon;
 
   switch (icon) {
@@ -51,18 +63,37 @@ export default function PricingTable({ icon, price, title, text,  offers, action
                     <div style={{ minWidth: "20px" }}>
                       <CheckMark />
                     </div>
+                    
                   ) : (
                     <div style={{ minWidth: "20px" }} />
                   )}
                 </div>
-                <p className="font20 extraBold">{item.name}</p>
+                
+                <div> 
+                 <p className="font20 extraBold">{item.offer}</p> 
+                <p className="font16">Discount Will be provided on Referrals</p> 
+               </div>
+
               </div>
             ))
           : null}
       </div>
-      <div style={{ maxWidth: "120px", margin: "30px auto 0 auto" }}>
-        <FullButton title="Buy" action={action} />
+      <div style={{ margin: "30px 0"}} className="font13">
+        <p className="font16 semiBold" style={{ marginBottom: "10px" }}>**Terms and Conditions**</p>
+        <ul>
+          <em>
+          <li style={{ marginBottom: "10px" }} >Minimum Land Size : 1 Acre</li>
+          <li style={{ marginBottom: "10px" }}>Continuous Water Supply</li>
+          <li style={{ marginBottom: "10px" }}>If payments are delayed, profit percentage will be increased by 1%</li>
+          </em>
+        </ul>  
       </div>
+      <div style={{ maxWidth: "120px", margin: "30px auto 0 auto" }}>
+      <Link activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy smooth offset={-80}>
+        <FullButton title="Buy"/>
+        </Link>
+      </div>
+      
     </Wrapper>
   );
 }

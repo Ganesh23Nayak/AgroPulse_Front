@@ -5,6 +5,7 @@ import styled from "styled-components";
 import PricingTable from "../Elements/PricingTable";
 
 export default function Pricing() {
+  
   return (
     <Wrapper id="pricing">
       <div className="whiteBg">
@@ -21,50 +22,25 @@ export default function Pricing() {
             <TableBox>
               <PricingTable
                 icon="roller"
-                price="₹1,000/mo"
-                title="Starter"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                price="₹25000/Acre"
+                title="Basic : 4 Months"
+                text="Paddy, also known as rice, is a staple food crop grown in flooded fields called paddies. It requires warm temperatures and ample water for optimal growth"
                 offers={[
-                  { name: "Product Offer", cheked: true },
-                  { name: "Offer", cheked: true },
-                  { name: "Product Offer #2", cheked: false },
-                  { name: "Product", cheked: false },
-                  { name: "Product Offer", cheked: false },
+                  { offer: "Product Offer", cheked: true },
                 ]}
                 action={() => alert("clicked")}
               />
             </TableBox>
             <TableBox>
-              <PricingTable
-                icon="monitor"
-                price="₹2,000/mo"
-                title="Basic"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                offers={[
-                  { name: "Product Offer", cheked: true },
-                  { name: "Offer", cheked: true },
-                  { name: "Product Offer #2", cheked: true },
-                  { name: "Product", cheked: true },
-                  { name: "Product Offer", cheked: false },
-                ]}
-                action={() => alert("clicked")}
-              />
+            <div style={{textAlign:"center", marginTop:"50%"}} className="glassContainer">
+                To Be Added
+            </div>
+
             </TableBox>
             <TableBox>
-              <PricingTable
-                icon="browser"
-                price="₹3,000/mo"
-                title="Golden"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                offers={[
-                  { name: "Product Offer", cheked: true },
-                  { name: "Offer", cheked: true },
-                  { name: "Product Offer #2", cheked: true },
-                  { name: "Product", cheked: true },
-                  { name: "Product Offer", cheked: true },
-                ]}
-                action={() => alert("clicked")}
-              />
+            <div style={{ padding: "50% 50%" }}>
+                To Be Added
+              </div>
             </TableBox>
           </TablesWrapper>
         </div>
