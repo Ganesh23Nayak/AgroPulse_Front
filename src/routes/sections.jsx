@@ -24,12 +24,15 @@ export const LandingPage = lazy(() => import('src/pages/landing'));
 
 export default function Router() {
   const [role, setRole] = useState("");
+  
+    
+ 
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       setRole(user.role);
-    }
+    } 
   }, []);
 
   const routes = useRoutes([
