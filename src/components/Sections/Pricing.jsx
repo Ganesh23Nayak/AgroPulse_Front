@@ -7,17 +7,19 @@ import PricingTable from "../Elements/PricingTable";
 export default function Pricing() {
   
   return (
-    <Wrapper id="pricing">
+    <Wrapper id="pricing" >
       <div className="whiteBg">
-        <div className="container">
+        <div className="container" >
+           <div style={{paddingTop: "50px"}}>
           <HeaderInfo>
-            <h1 className="font40 extraBold">Check Our Pricing</h1>
-            <p className="font20">
+            <h1 className="font40 extraBold"  >Check Our Pricing</h1>
+            <p className="font20" >
               The Current Pricing as of Now
               <br />
               Get Market Leading Prices Customized For You!!!
             </p>
           </HeaderInfo>
+          </div>
           <TablesWrapper className="flexSpaceNull" style={{ justifyContent: "center" }}>
             <TableBox>
               <PricingTable
@@ -46,9 +48,9 @@ const Wrapper = styled.section`
 `;
 const HeaderInfo = styled.div`
   margin-bottom: 50px;
-  @media (max-width: 860px) {
-    text-align: center;
-  }
+  // @media (max-width: 860px) {
+  //   text-align: center;
+  // }
 `;
 const TablesWrapper = styled.div`
   @media (max-width: 860px) {

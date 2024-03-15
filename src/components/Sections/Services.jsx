@@ -34,27 +34,27 @@ export default function Services() {
           <ServiceBoxRow className="flex">
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="roller"
+                icon="timer"
                 title="Saves Time"
-                subtitle="As a GenZ working in a City can continuosly monitor their farms.  "
+                subtitle="Spend as less as 10 minutes daily "
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="monitor"
                 title="Smart Investment"
-                subtitle="With AgroPulse, you can earn more as a side income."
+                subtitle="Guaranteed *Non-taxable* returns on your investment."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="browser"
                 title="Land Utilization"
-                subtitle="The land utilization of your farm is 100% with AgroPulse."
+                subtitle="Utilize your dormant land with AgroPulse."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
-              <ServiceBox icon="printer" title="Print" subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor." />
+              <ServiceBox icon="printer" title="Connect Roots" subtitle="AgroPulse connects roots." />
             </ServiceBoxWrapper>
           </ServiceBoxRow>
         </div>

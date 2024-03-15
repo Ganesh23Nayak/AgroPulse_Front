@@ -133,7 +133,7 @@ const handleButtonClick = async(e) => {
           <Box>
               <Button variant="contained" sx={{ width: '10%' ,position: 'absolute',
             bottom: 105, // Adjust this value to position the box where you want
-            left: '750px', // Center horizontally
+            left: "33.5%", // Center horizontally
             transform: 'translateX(-100%)', // Center horizontally
             zIndex: 1,
             textAlign: 'left',}} style={{ marginTop: '625px',}} onClick={handleClickOpen}>Add Customer</Button>

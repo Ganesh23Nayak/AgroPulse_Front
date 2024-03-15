@@ -1,9 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
-export default async function getFarmerDb() {
-      
+export default async function getFarmerDb() {    
     try {
-      const response = await axios.get("http://localhost:3000/api/clients")
+      const response = await axios.get("http://localhost:3000/api/clients");
   
       if (!response.ok) {
         return null;

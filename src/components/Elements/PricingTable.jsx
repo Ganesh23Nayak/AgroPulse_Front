@@ -45,7 +45,7 @@ export default function PricingTable({ icon, price, title, text,  offers, action
   }
 
   return (
-    <Wrapper className="whiteBg radius8 shadow">
+    <Wrapper className="whiteBg radius8 shadow emboss" style={{border: "3px solid Gray",marginBottom: "50px"}}>
       <div className="flexSpaceCenter">
         {getIcon}
         <p className="font30 extraBold">{price}</p>
@@ -88,8 +88,8 @@ export default function PricingTable({ icon, price, title, text,  offers, action
           </em>
         </ul>  
       </div>
-      <div style={{ maxWidth: "120px", margin: "30px auto 0 auto" }}>
-      <Link activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy smooth offset={-80}>
+      <div style={{ maxWidth: "120px", margin: "30px auto 0 auto",justifyItems: "center" }}>
+      <Link activeClass="active" to="contact" spy smooth offset={-80} >
         <FullButton title="Buy"/>
         </Link>
       </div>
