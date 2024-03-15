@@ -60,7 +60,7 @@ export default function LoginView() {
               if (userData.role === 'LABOUR') {
                   navigate('/farmerdash');
               } else {
-                  navigate('/Administrator');
+                  navigate('/admin');
               }
           } else {
               console.error('Login Failed:', response.statusText);
