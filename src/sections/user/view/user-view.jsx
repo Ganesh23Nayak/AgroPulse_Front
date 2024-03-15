@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
@@ -32,7 +32,7 @@ export default function UserPage() {
   const [filterName, setFilterName] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [users, setUsers] = useState([]);
-  const [zeroRows, setZeroRows] = useState(false);
+  const [zeroRows, setZeroRows] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -140,7 +140,6 @@ export default function UserPage() {
                   { id: 'name', label: 'Name' },
                   { id: 'equipment', label: 'Equipment' },
                   { id: 'rating', label: 'Ratings' },
-                  { id: 'isVerified', label: 'Verified', align: 'center' },
                   { id: 'status', label: 'Status' },
                   { id: '' },
                 ]}
@@ -152,13 +151,10 @@ export default function UserPage() {
                     .map((row) => (
                       <UserTableRow
                         key={row.fid}
-                        fid={row.fid}
                         avatarUrl={row.avatarUrl}
                         name={row.name}
-                        contact={row.contact}
-                        address={row.address}
-                        totfarms={row.totfarms}
-                        totsize={row.totsize}
+                        equipment={row.equipment}
+                        rating={row.rating}
                         status={row.status}
                         selected={selected.indexOf(row.name) !== -1}
                         handleClick={(event) => handleClick(event, row.name)}

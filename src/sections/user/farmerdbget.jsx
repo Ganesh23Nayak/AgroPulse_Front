@@ -46,10 +46,8 @@ export default async function getFarmerDb() {
           fid: farmer.fid,
           name: `${farmer.fname} ${farmer.lname}`,
           avatarUrl: `/assets/images/avatars/avatar_${index + 1}.jpg`,
-          contact: farmer.email ? `${farmer.phone}   ${farmer.email}` : farmer.phone,
-          address: farmer.address,
-          totfarms: await fetchfarms(farmer.fid),
-          totsize: await fetchsize(farmer.fid),
+          equipment: farmer.equipment,
+          rating: farmer.rating,
           status: farmer.status
         })));
         return users;
