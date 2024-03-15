@@ -278,7 +278,7 @@ export default function AppView() {
           <AppCurrentSubject
             title="Current Subject"
             chart={{
-              categories: ['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math'],
+              categories: ['E Conductivity', 'W Depth', 'Temperature', 'Soil PH', '', 'Math'],
               series: [
                 { name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
                 { name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },

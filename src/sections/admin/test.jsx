@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Box } from '@mui/system';
 import Paper from '@mui/material/Paper';
@@ -25,6 +25,9 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+
+
+
 const messages = [
   { sender: 'Alice', content: 'Hi there!' },
   { sender: 'Bob', content: 'Hey! How are you?' },
@@ -42,9 +45,11 @@ const messages = [
   { sender: 'Bob12', content: 'Hey! How are you?' },
 ];
 
+const arr=[]
 const MessageList = () => {
   const [open, setOpen] = React.useState(false);
   const [selectedSender, setSelectedSender] = useState(null);
+  // const [arr1, setarr1]=useState([])
 
 const handleClickOpen = () => {
   setOpen(true);
@@ -57,6 +62,7 @@ const handleClickOpen = () => {
 const handleClose = () => {
   setOpen(false);
 };
+
 const handleButtonClick = async(e) => {
     e.preventDefault();
     const emails = document.getElementsByName("email")[0].value;
@@ -65,7 +71,6 @@ const handleButtonClick = async(e) => {
     const LandSize = document.getElementsByName("land_Size")[0].value;
     const addres = document.getElementsByName("address")[0].value;
     const passwords = document.getElementsByName("password")[0].value;
-    
 
 
     const data={
@@ -80,7 +85,7 @@ const handleButtonClick = async(e) => {
 
     console.log('Form Data:', data);
 
-    Axios.post("http://localhost:3000/addnew",data,{
+    Axios.post("http://localhost:3000/api/auth/addnew",data,{
       headers: {
 				'Content-Type': 'application/json',
 			},
@@ -99,6 +104,21 @@ const handleButtonClick = async(e) => {
 
     handleClose();
   }
+  useEffect(() => {
+   Axios.get('http://localhost:3000/api/data/getlabour')
+    .then((response) => {
+      console.log(response.data);
+      
+      response.data.forEach((item) => {
+               arr.push({"sender":item.user.name,"content":item})
+
+      });
+      console.log("arr")
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+},[]);
 
 
 
@@ -107,7 +127,7 @@ const handleButtonClick = async(e) => {
       <Item sx={{ flex: '0 0 30%', minWidth: '200px', maxHeight: '80vh', overflowY: 'auto' }}>
         <div className="message-list-container">
           <div className="message-list">
-            {messages.map((message, index) => (
+            {arr.map((message, index) => (
               <div 
                 key={index} 
                 className={`message-item ${message.sender === selectedSender ? 'selected' : ''}`} 

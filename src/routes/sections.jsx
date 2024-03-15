@@ -22,13 +22,8 @@ export const ProductsPage = lazy(() => import('src/pages/products'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 export const LandingPage = lazy(() => import('src/pages/landing'));
 
-export default function Router() {
-  // const [role, setRole] = useState("");
-  
-    
- 
-
-  // useEffect(() => {
+export default function Router() {  
+   // useEffect(() => {
   //   const user = JSON.parse(localStorage.getItem('user'));
   //   if (user) {
   //     setRole(user.role);
