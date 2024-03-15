@@ -48,7 +48,7 @@ const FarmerLanding = () => (
 
         <Grid xs={12} md={6} lg={15} mt={5}>
           
-          <AppNewsUpdate
+          {/* <AppNewsUpdate
             title="News Update"
             list={[...Array(5)].map((_, index) => ({
               id: faker.string.uuid(),
@@ -56,7 +56,53 @@ const FarmerLanding = () => (
               description: faker.commerce.productDescription(),
               image: `/assets/images/covers/cover_${index + 1}.jpg`,
               postedAt: faker.date.recent(),
-            }))}
+            }))} */}
+              <AppNewsUpdate
+          title="Farmer News Update"
+          list={[
+            {
+              id: faker.string.uuid(),
+              title: "Power farming: The onerous task of making agrivoltaics work",
+              description: "Experts discuss the challenges and opportunities in implementing agrivoltaics for farmers.",
+              image: "/assets/images/covers/cover_1.jpg",
+              postedAt: faker.date.recent(),
+            },
+            {
+              id: faker.string.uuid(),
+              title: "India to swap 2.5m tonnes of conventional urea with nano urea in FY24: Minister",
+              description: "Government plans to replace conventional urea with nano urea to boost agricultural productivity.",
+              image: "/assets/images/covers/cover_2.jpg",
+              postedAt: faker.date.recent(),
+            },
+            {
+              id: faker.string.uuid(),
+              title: "A crisis is brewing in Punjab and farmers know it",
+              description: "Farmers in Punjab face a looming crisis, prompting discussions on potential solutions.",
+              image: "/assets/images/covers/cover_3.jpg",
+              postedAt: faker.date.recent(),
+            },
+            {
+              id: faker.string.uuid(),
+              title: "Sugar mills can now sell potash derived from molasses to fertiliser firms",
+              description: "New regulations allow sugar mills to market potash derived from molasses, benefiting both mills and fertiliser companies.",
+              image: "/assets/images/covers/cover_4.jpg",
+              postedAt: faker.date.recent(),
+            },
+            {
+              id: faker.string.uuid(),
+              title: "'Committed to fulfill every resolution related to farmers’ welfare': PM Modi",
+              description: "Prime Minister Modi reaffirms the government's dedication to addressing farmers' concerns and welfare.",
+              image: "/assets/images/covers/cover_5.jpg",
+              postedAt: faker.date.recent(),
+            },
+            {
+              id: faker.string.uuid(),
+              title: "MSP linked to crop diversification? Farmers will shift from paddy only when...",
+              description: "Discussions arise regarding the role of Minimum Support Price (MSP) in encouraging crop diversification among farmers.",
+              image: "/assets/images/covers/cover_6.jpg",
+              postedAt: faker.date.recent(),
+            },
+          ]}
           />
         </Grid>
 
