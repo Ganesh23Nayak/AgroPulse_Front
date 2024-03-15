@@ -20,6 +20,7 @@ export default function AppWidgetSummary({ title, total, icon, color = 'primary'
         py: 5,
         borderRadius: 2,
         ...sx,
+        paddingBottom: 1,
       }}
       {...other}
     >

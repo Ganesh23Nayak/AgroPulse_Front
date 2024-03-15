@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';

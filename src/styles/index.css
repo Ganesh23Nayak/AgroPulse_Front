@@ -408,3 +408,9 @@ min-width: none;
 .buy:hover{
   background: rgb(45, 192, 0);
 }
+.dashimg{
+  background-image: url("../assets/img/background.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
