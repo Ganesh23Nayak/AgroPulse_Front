@@ -276,9 +276,9 @@ export default function AppView() {
 
         <Grid xs={12} md={6} lg={4}>
           <AppCurrentSubject
-            title="Current Subject"
+            title="Health Factors"
             chart={{
-              categories: ['E Conductivity', 'W Depth', 'Temperature', 'Soil PH', '', 'Math'],
+              categories: ['E Conductivity', 'W Depth', 'W Temperature', 'Soil PH', 'q', 'Math'],
               series: [
                 { name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
                 { name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },

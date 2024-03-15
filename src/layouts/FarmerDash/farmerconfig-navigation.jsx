@@ -9,12 +9,12 @@ const icon = (name) => (
 const navConfig = [
   {
     title: 'dashboard',
-    path: '/farmerdash',
+    path: '/employee',
     icon: icon('ic_analytics'),
   },
   {
     title: 'ratings',
-    path: '/farmerdash/ratings',
+    path: '/employee/ratings',
     icon: icon('ic_user'),
   },
  
