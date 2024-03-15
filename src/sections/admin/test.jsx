@@ -29,20 +29,12 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const messages = [
-  { sender: 'Alice', content: 'Hi there!' },
-  { sender: 'Bob', content: 'Hey! How are you?' },
-  { sender: 'Bob1', content: 'Lmao' },
-  { sender: 'Bob2', content: 'Hehe' },
-  { sender: 'Bob3', content: ':3' },
-  { sender: 'Bob4', content: 'XD' },
-  { sender: 'Bob5', content: '0.0' },
-  { sender: 'Bob6', content: 'Heya! How are you?' },
-  { sender: 'Bob7', content: 'Hehe! How are you?' },
-  { sender: 'Bob8', content: 'Hmm! How are you?' },
-  { sender: 'Bob9', content: 'Lol! How are you?' },
-  { sender: 'Bob10', content: 'Kiki! How are you?' },
-  { sender: 'Bob11', content: 'Sup?' },
-  { sender: 'Bob12', content: 'Hey! How are you?' },
+  { sender: 'Alice', area:"10acres", subscription:"paid", phone:"1234567890",email:"a@gmail.com",farm_Location:"Mangalore"},
+  { sender: 'Akshay', area:"5acres", subscription:"paid", phone:"1234567320",email:"k@gmail.com",farm_Location:"Udupi"},
+  { sender: 'Ram', area:"10acres", subscription:"paid", phone:"1234567536",email:"d@gmail.com",farm_Location:"Mangalore"},
+  { sender: 'Shyam', area:"10acres", subscription:"paid", phone:"1234567123",email:"b@gmail.com",farm_Location:"Bellary"},
+  { sender: 'Shamu', area:"10acres", subscription:"paid", phone:"1234567521",email:"c@gmail.com",farm_Location:"Karkala"},
+
 ];
 
 const arr=[]
@@ -127,7 +119,7 @@ const handleButtonClick = async(e) => {
       <Item sx={{ flex: '0 0 30%', minWidth: '200px', maxHeight: '80vh', overflowY: 'auto' }}>
         <div className="message-list-container">
           <div className="message-list">
-            {arr.map((message, index) => (
+            {messages.map((message, index) => (
               <div 
                 key={index} 
                 className={`message-item ${message.sender === selectedSender ? 'selected' : ''}`} 
@@ -270,7 +262,12 @@ const handleButtonClick = async(e) => {
                 .filter((message) => message.sender === selectedSender)
                 .map((message, index) => (
                   <div key={index} className={`message-item ${message.sender === 'You' ? 'sent' : 'received'}`}>
-                    <div className="message-content">{message.content}</div>
+                    <div className="message-content"> Email : {message.email} </div>
+                    <div className="message-content"> Name : {message.sender} </div>
+                    <div className="message-content"> Subscription : {message.subscription} </div>
+                    <div className="message-content">Location : {message.farm_Location} </div>
+                    <div className="message-content"> Phone : {message.phone} </div>
+                    <div className="message-content"> Area : {message.area} </div>
                    
                   </div>
                 ))

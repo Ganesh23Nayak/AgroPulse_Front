@@ -1,9 +1,9 @@
+// import Iconify from 'src/components/iconify';
 import { faker } from '@faker-js/faker';
 
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
-// import Iconify from 'src/components/iconify';
-
+ 
 // import AppTasks from '../app-tasks';
 import AppNewsUpdate from '../app-news-update';
 import AppOrderTimeline from '../app-order-timeline';
@@ -17,13 +17,24 @@ import AppConversionRates from '../app-conversion-rates';
 // ----------------------------------------------------------------------
 
 export default function AppView() {
+
+//   function generateDates(startIndex = 0, endDate = new Date()) {
+//     const startingDate = new Date(2023, 0, 1); // Month index starts from 0, so January is 0
+//     const pastDate = faker.date.between(startingDate, endDate);
+
+//     const isValidDate = pastDate < endDate;
+//     if (isValidDate) {
+//         return [pastDate, ...generateDates(startIndex + 1, endDate)];
+//     }
+//     return [];
+// }
   return (
     <Container maxWidth="xl" className='dashimg' sx={{pt:4}}>
       
       <Grid container spacing={3}>
         <Grid xs={12} sm={6} md={6}>
           <AppWidgetSummary
-            title="Weekly Sales"
+            title="Farm Health"
             total={714000}
             color="success"
             icon={<img alt="icon" src="/assets/icons/glass/ic_glass_bag.png" />}
@@ -32,7 +43,7 @@ export default function AppView() {
 
         <Grid xs={12} sm={6} md={6}>
           <AppWidgetSummary
-            title="Item Orders"
+            title="Predicted Current Returns"
             total={1723315}
             color="warning"
             icon={<img alt="icon" src="/assets/icons/glass/ic_glass_buy.png" />}
@@ -41,8 +52,8 @@ export default function AppView() {
 
         <Grid xs={12} md={6} lg={8}>
           <AppWebsiteVisits
-            title="Website Visits"
-            subheader="(+43%) than last year"
+            title="Weather Data"
+            subheader=""
             chart={{
               labels: [
                 '01/01/2003',
@@ -83,13 +94,13 @@ export default function AppView() {
 
         <Grid xs={12} md={6} lg={4}>
           <AppCurrentVisits
-            title="Current Visits"
+            title="Crop Split Up"
             chart={{
               series: [
-                { label: 'America', value: 4344 },
-                { label: 'Asia', value: 5435 },
-                { label: 'Europe', value: 1443 },
-                { label: 'Africa', value: 4443 },
+                { label: 'Potato', value: 4344 },
+                { label: 'Paddy', value: 5435 },
+                { label: 'Tomato', value: 1443 },
+                { label: 'Onion', value: 4443 },
               ],
             }}
           />
@@ -276,7 +287,7 @@ export default function AppView() {
 
         <Grid xs={12} md={6} lg={4}>
           <AppCurrentSubject
-            title="Current Subject"
+            title="Farm Health factors"
             chart={{
               categories: ['E Conductivity', 'W Depth', 'Temperature', 'Soil PH', '', 'Math'],
               series: [
@@ -307,11 +318,11 @@ export default function AppView() {
             list={[...Array(5)].map((_, index) => ({
               id: faker.string.uuid(),
               title: [
-                '1983, orders, $4220',
-                '12 Invoices have been paid',
-                'Order #37745 from September',
-                'New order placed #XF-2356',
-                'New order placed #XF-2346',
+                'Payout completed, ₹31,000 deposited',
+                'Harvested Paddy',
+                'Fertilizers Applied to farm',
+                'Completed Sowing',
+                'Subscription initiated',
               ][index],
               type: `order${index + 1}`,
               time: faker.date.past(),

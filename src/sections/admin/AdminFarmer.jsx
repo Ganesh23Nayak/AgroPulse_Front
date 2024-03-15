@@ -8,7 +8,7 @@ import { styled } from '@mui/material/styles';
 // import CheckIcon from '@mui/icons-material/Check';
 
 
-import FarmerCard from '../farmer/card';
+// import FarmerCard from '../farmer/card';
 
 // import './MessageList.css'; // Import CSS for styling (create this file with your styles)
 
@@ -33,8 +33,13 @@ const AdminFarmer = () => {
 
 
 const messages = [
-  { sender: 'Alice', content: <FarmerCard/> },
-  { sender: 'Bob', content: 'Hey! How are you?' },
+  { sender: 'Ram', equipment:'Tractor',Rating:4.5,phone:1909090912,email:"cddssd@gmail.com",loction:"Karkala"}, 
+  { sender: 'Sham', equipment:'Planter',Rating:3.5,phone:19097512,email:"csfdsa@gmail.com",loction:"Karkala"}, 
+  { sender: 'Alice', equipment:'Tiller',Rating:4.5,phone:190990912,email:"cadSs@gmail.com",loction:"Karkala"}, 
+  { sender: 'Raju', equipment:'Harvester',Rating:5,phone:1909090912,email:"ffgrtc@gmail.com",loction:"Karkala"}, 
+  
+  
+
   
 ];
 
@@ -92,7 +97,11 @@ const messages = [
                 .filter((message) => message.sender === selectedSender)
                 .map((message, index) => (
                   <div key={index} className={`message-item ${message.sender === 'You' ? 'sent' : 'received'}`}>
-                    <div className="message-content">{message.content}</div>
+                    <div className="message-content">Name :{message.sender}</div>
+                    <div className="message-content">Phone :{message.phone}</div>
+                    <div className="message-content">Email :{message.email}</div>
+                    <div className="message-content">Location :{message.location}</div>
+                    <div className="message-content">Equipments :{message.equipment}</div>
                    
                   </div>
                 ))
