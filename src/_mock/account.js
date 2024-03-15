@@ -1,4 +1,4 @@
-// ----------------------------------------------------------------------
+
 
 export const account = {
   displayName: 'Jaydon Frankie',
