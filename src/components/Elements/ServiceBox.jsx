@@ -4,6 +4,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 
+import TimerIcon from "src/assets/svg/Services/TimerIcon";
+
 // Assets
 import RollerIcon from "../../assets/svg/Services/RollerIcon";
 import MonitorIcon from "../../assets/svg/Services/MonitorIcon";
@@ -25,6 +27,9 @@ export default function ServiceBox({icon, title, subtitle}) {
       break;
     case "printer":
       getIcon = <PrinterIcon />;
+      break;
+    case "timer":
+      getIcon = <TimerIcon/>;
       break;
     default:
       getIcon = <RollerIcon />;

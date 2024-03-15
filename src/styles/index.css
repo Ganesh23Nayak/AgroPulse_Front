@@ -218,6 +218,7 @@ body {
   }
 }
 /* BORDER RADIUS */
+
 .radius8 {
   border-radius: 1rem;
 }
@@ -393,4 +394,17 @@ min-width: none;
   font-optical-sizing: auto;
   font-weight:500;
   font-style: normal;
+}
+
+.emboss:hover{
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.buy{
+  transition: all 0.5s ease;
+  
+}
+.buy:hover{
+  background: rgb(45, 192, 0);
 }

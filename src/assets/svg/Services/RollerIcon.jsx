@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import rice from "./rice.png";
+
 function SvgComponent(props) {
   return (
     // <svg xmlns="http://www.w3.org/2000/svg" width={35.459} height={43.42} viewBox="0 0 35.459 43.42" {...props}>
@@ -16,7 +18,8 @@ function SvgComponent(props) {
     //     />
     //   </g>
     // </svg>
-    <img src="https://cdn-icons-png.flaticon.com/128/898/898133.png" alt="Shovel" style={{width: "50px", height: "50px"}}/>
+    // <img src="https://cdn-icons-png.flaticon.com/128/898/898133.png" alt="Shovel" style={{width: "50px", height: "50px"}}/>
+    <img src={rice} alt="Shovel" style={{width: "50px", height: "50px"}}/>
   );
 }
 

@@ -6,7 +6,7 @@ import styled from "styled-components";
 export default function ProjectBox({ img, title, text, action}) {
   return (
     <Wrapper>
-      <ImgBtn className="aniamte pointer" onClick={action ? () => action() : null}>
+      <ImgBtn className="aniamte ">
         <img className="radius8" src={img} alt="project" />
       </ImgBtn>
       <h3 className="font20 extraBold">{title}</h3>
