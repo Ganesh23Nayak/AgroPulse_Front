@@ -4,17 +4,18 @@ import { faker } from '@faker-js/faker';
 import { Grid } from '@mui/material'
 import { Container } from '@mui/system'
 
-import AppTasks from 'src/sections/overview/app-tasks'
 import AppNewsUpdate from 'src/sections/overview/app-news-update'
 import AppOrderTimeline from 'src/sections/overview/app-order-timeline'
+
+import BasicTable from './table';
 
 
 const FarmerLanding = () => (
     <Container maxWidth="xl">
         <Grid container spacing={4}>
         <Grid xs={12} md={6} lg={8} padding={2} style={{ maxHeight: '450px', overflowY: 'auto' }}>
-          <AppTasks
-            title="Present Tasks"
+          {/* <AppTasks
+            title="Pending Clients"
             list={[
               { id: '1', name: 'Ramesh'  },
               { id: '2', name: 'Suresh' },
@@ -24,20 +25,19 @@ const FarmerLanding = () => (
               { id: '6', name: 'Suresh' },
               { id: '7', name: 'Mahesh'  },
             ]}
-          />
+          /> */}
+          <BasicTable />
         </Grid>
 
         <Grid xs={12} md={6} lg={4}>
           <AppOrderTimeline
-            title="Past Task"
-            list={[...Array(5)].map((_, index) => ({
+            title="Past Clients"
+            list={[...Array(3)].map((_, index) => ({
               id: faker.string.uuid(),
               title: [
-                '1983, orders, $4220',
-                '12 Invoices have been paid',
-                'Order #37745 from September',
-                'New order placed #XF-2356',
-                'New order placed #XF-2346',
+                'Darshan',
+                'Alice',
+                'Ram',
               ][index],
               type: `order${index + 1}`,
               time: faker.date.past(),

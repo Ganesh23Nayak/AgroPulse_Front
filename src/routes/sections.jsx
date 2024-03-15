@@ -1,5 +1,5 @@
 import { lazy, Suspense, useState, useEffect } from 'react';
-import { Outlet, Navigate, useRoutes, redirect, useNavigate } from 'react-router-dom';
+import { Outlet, Navigate, useRoutes } from 'react-router-dom';
 
 import Admin from 'src/pages/Admin';
 import Market from 'src/pages/Market';
