@@ -116,7 +116,7 @@ export default function RegisterView() {
     const passwords = document.getElementsByName("password")[0].value;
     const equip =document.getElementsByName("equipments")[0].value;
     const rates =document.getElementsByName("rate")[0].value;
-    
+
     const data={
       email :emails,
       name : names,
@@ -124,7 +124,7 @@ export default function RegisterView() {
       password:passwords,
       equipment :equip,
       rate:parseInt(rates,10),
-      role:"LABOUR",
+      role: "LABOUR",
       status:"ACTIVE"
     };
     console.log(data)
@@ -138,6 +138,7 @@ export default function RegisterView() {
       if (response.data) {
         alert('added user');
         console.log(' Successful');
+        router.push('/employee')
       }
     })
     .catch((error) => {
