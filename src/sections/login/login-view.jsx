@@ -55,10 +55,13 @@ export default function LoginView() {
       .then((response) => {
           if (response.status === 200) {
               console.log('Login Successful');
-              localStorage.setItem('user', JSON.stringify(response.data));
+              localStorage.setItem('user', JSON.stringify(response.data.user));
+              console.log(JSON.parse(localStorage.getItem('user')).role);
               const userData = response.data.user;
               if (userData.role === 'LABOUR') {
-                  navigate('/farmerdash');
+                  navigate('/employee');
+              } else if (userData.role === 'CUSTOMER') {
+                  navigate('/client');
               } else {
                   navigate('/admin');
               }
