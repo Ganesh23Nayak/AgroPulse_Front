@@ -1,39 +1,9 @@
-export default async function getFarmerDb() {
-    async function fetchsize(id) {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/farmers/farmsize/${id}`);
-        const jsonData = await response.json();
-        if(!jsonData.data[0].size){
-            return null;
-        }
-        return jsonData.data[0].size;
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-        return null;
-      }
-    }
+import axios from 'axios';
 
-    async function fetchfarms(id) {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/farmers/farms/${id}`);
-        const jsonData = await response.json();
-        if(!jsonData.data[0].count){
-            return null;
-        }
-        return jsonData.data[0].count;
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-        return null;
-      }
-    }
-    
+export default async function getFarmerDb() {
+      
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/farmers`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.get("http://localhost:3000/api/clients")
   
       if (!response.ok) {
         return null;
