@@ -82,12 +82,13 @@ export default function LoginView() {
   const renderForm = (
     <>
       <Stack spacing={3}>
-        <TextField name="email" label="Email address" />
+        <TextField name="email" label="Email address" sx={{color:"black"}}/>
 
         <TextField
           name="password"
           label="Password"
           type={showPassword ? 'text' : 'password'}
+          sx={{color:"black"}}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, Suspense } from 'react';
 import { Outlet, Navigate, useRoutes } from 'react-router-dom';
 
 import Admin from 'src/pages/Admin';
@@ -22,18 +22,14 @@ export const ProductsPage = lazy(() => import('src/pages/products'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 export const LandingPage = lazy(() => import('src/pages/landing'));
 
-export default function Router() {
-  const [role, setRole] = useState("");    
+export default function Router() {  
+   // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem('user'));
+  //   if (user) {
+  //     setRole(user.role);
+  //   } 
+  // }, []);
 
-
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-      setRole(user.role);
-      
-    } 
-
-  }, []);
   const routes = useRoutes([
     {
       path: '/',
@@ -53,49 +49,49 @@ export default function Router() {
     },
     {
       path: 'client',
-      element: role === "CUSTOMER" ? (
+      element: (
         <DashboardLayout>
           <Suspense>
             <Outlet />
           </Suspense>
         </DashboardLayout>
-      ):<Page404 />,
+      ),
       children: [
         {
           path: '',
-          element: role === "CUSTOMER" ? <IndexPage /> : <Page404 />,
+          element: <IndexPage />,
         },
         {
           path: 'user',
-          element: role === "CUSTOMER" ? <UserPage /> : <Page404 />,
+          element:<UserPage />,
         },
         {
           path: 'blog',
-          element: role === "CUSTOMER" ? <BlogPage /> : <Page404 />,
+          element: <BlogPage />,
         },
       ],
     },
     {
       path: 'admin',
-      element: role=== "ADMIN" ?(
+      element: (
         <AdminDashboardLayout>
           <Suspense>
             <Outlet />
           </Suspense>
         </AdminDashboardLayout>
-      ):<Page404 />,
+      ),
       children: [
         {
           path: '',
-          element: role === "ADMIN" ? <Admin /> : <Page404 />,
+          element: <Admin />,
         },
         {
           path: 'user',
-          element: role === "ADMIN" ? <MessageList /> : <Page404 />,
+          element:<MessageList />,
         },
         {
           path: 'farmer',
-          element: role === "ADMIN" ? <AdminFarmer /> : <Page404 />,
+          element:<AdminFarmer />,
         },
       ],
     },
@@ -111,11 +107,11 @@ export default function Router() {
       children: [
         {
           path: '',
-          element: role === "LABOUR" ? <FarmerLanding /> : <Page404 />,
+          element:<FarmerLanding />,
         },
         {
           path: 'ratings',
-          element: role === "LABOUR" ? <FarmerCard /> : <Page404 />,
+          element:<FarmerCard />,
         },
       ],
     },
