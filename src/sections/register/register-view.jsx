@@ -173,7 +173,9 @@ export default function RegisterView() {
           left: { xs: 16, md: 24 },
         }}
       /> */}
+      <a href='/'>
       <img src="../../../public/favicon/agrofav.png" alt="logo" className="logoIcon" style={{width:"100px",height:"100px"}}/>
+      </a>
       <Card
         sx={{
           p: 5,
