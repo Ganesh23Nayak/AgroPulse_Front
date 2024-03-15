@@ -7,6 +7,7 @@ const FarmerCardsContainer = () => (
       <FarmerCard />
       <FarmerCard />
       <FarmerCard />
+      
     </div>
   )
 

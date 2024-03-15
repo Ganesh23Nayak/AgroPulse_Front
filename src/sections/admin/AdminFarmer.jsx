@@ -25,7 +25,6 @@ const AdminFarmer = () => {
   const [selectedSender, setSelectedSender] = useState(null);
 
 
-
   
   const handleSenderClick = (sender) => {
     setSelectedSender(sender);

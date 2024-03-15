@@ -24,10 +24,10 @@ const [value2, setValue2] = React.useState(3);
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Ramesh
+            Darshan&apos;s Rating
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Ramesh, a diligent farmer rooted in the heart of rural life, embodies the essence of hard work and dedication.
+          <Typography gutterBottom variant="h5" component="div">
+            Tractor Owner
           </Typography>
           <Rating
         name="simple-controlled"
@@ -49,10 +49,36 @@ const [value2, setValue2] = React.useState(3);
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Suresh
+            Ram&apos;s Rating
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Suresh, a diligent farmer rooted in the heart of rural life, embodies the essence of hard work and dedication.
+          <Typography gutterBottom variant="h5" component="div">
+            Tractor Owner
+          </Typography>
+          <Rating
+        name="simple-controlled"
+        value={value2}
+        onChange={(event, newValue) => {
+          setValue2(newValue);
+        }}
+      />
+        </CardContent>
+      </CardActionArea>
+    </Card>
+
+<Card sx={{ maxWidth: 345 ,marginTop: 5}}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="200"
+          image="https://images.unsplash.com/photo-1609252509102-aa73ff792667?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFybWVyJTIwcG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" 
+          alt="farmer"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Alice Rating
+          </Typography>
+          <Typography gutterBottom variant="h5" component="div">
+            Tractor Owner
           </Typography>
           <Rating
         name="simple-controlled"

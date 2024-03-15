@@ -237,8 +237,8 @@ export default function RegisterView() {
             name="name"
             value={fname}
             onChange={(e) => setfname(e.target.value)}
+            style={{color: 'black'}}
             helperText="What do you go by?"
-            
           />
           {/* <TextField required
             label="Last Name"
@@ -251,9 +251,15 @@ export default function RegisterView() {
             value={emailc}
             type="email"
             name="email"
+            style={{color: 'black'}}
             onChange={(e) => setEmailc(e.target.value)}
             helperText="You're gonna need this to log in"
-           
+            sx={{
+              '&:-webkit-autofill': {
+                WebkitTextFillColor: 'black !important', // Text color for autofilled input
+                caretColor: 'black !important', // Caret (cursor) color for autofilled input
+              },
+            }}
             // onChange={(e) => 
             //   showEmail? setEmailc(e.target.value) : setPhonec(e.target.value)
             // }
@@ -273,7 +279,14 @@ export default function RegisterView() {
             name="number"
             type="number"
             helperText="Enter your phone number"
+            style={{color: 'black'}}
             onChange={(e) => setPhonec(e.target.value)}
+            sx={{
+              '&:-webkit-autofill': {
+                WebkitTextFillColor: 'black !important', // Text color for autofilled input
+                caretColor: 'black !important', // Caret (cursor) color for autofilled input
+              },
+            }}
           />
           <TextField 
           required
@@ -281,12 +294,20 @@ export default function RegisterView() {
             label="Charge/day"
             name="rate"
             type="number"
+            style={{color: 'black'}}
             helperText="Enter the cost"
             onChange={(e) => setRate(e.target.value)}
+            sx={{
+              '&:-webkit-autofill': {
+                WebkitTextFillColor: 'black !important', // Text color for autofilled input
+                caretColor: 'black !important', // Caret (cursor) color for autofilled input
+              },
+            }}
           />
           <TextField required
             label="Password"
             name ="password"
+            style={{color: 'black'}}
             type={showPassword ? 'text' : 'password'}
             value={password}
             helperText={passstrength}
@@ -301,6 +322,12 @@ export default function RegisterView() {
               ),
             }}
             autoComplete='new-password'
+            sx={{
+              '&:-webkit-autofill': {
+                WebkitTextFillColor: 'black !important', // Text color for autofilled input
+                caretColor: 'black !important', // Caret (cursor) color for autofilled input
+              },
+            }}
           />
           <TextField required
             label="Confirm Password"
@@ -317,6 +344,12 @@ export default function RegisterView() {
                     </IconButton>
                   </InputAdornment>
                 ),
+              }}
+              sx={{
+                '&:-webkit-autofill': {
+                  WebkitTextFillColor: 'black !important', // Text color for autofilled input
+                  caretColor: 'black !important', // Caret (cursor) color for autofilled input
+                },
               }}
           />
           

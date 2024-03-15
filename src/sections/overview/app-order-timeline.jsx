@@ -52,11 +52,11 @@ function OrderItem({ item, lastTimeline }) {
       <TimelineSeparator>
         <TimelineDot
           color={
-            (type === 'order1' && 'primary') ||
+            (type === 'order1' && 'success') ||
             (type === 'order2' && 'success') ||
-            (type === 'order3' && 'info') ||
-            (type === 'order4' && 'warning') ||
-            'error'
+            (type === 'order3' && 'success') ||
+            (type === 'order4' && 'success') ||
+            (type === 'order5' && 'success')
           }
         />
         {lastTimeline ? null : <TimelineConnector />}
