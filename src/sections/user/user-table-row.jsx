@@ -86,7 +86,7 @@ export default function UserTableRow({
 
         <MenuItem onClick={handleCloseMenu} sx={{ color: 'error.main' }}>
           <Iconify icon="eva:trash-2-outline" sx={{ mr: 2 }} />
-          Delete
+         Report
         </MenuItem>
       </Popover>
     </>
