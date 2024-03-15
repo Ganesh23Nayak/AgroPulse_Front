@@ -8,6 +8,7 @@ import AppTasks from 'src/sections/overview/app-tasks'
 import AppNewsUpdate from 'src/sections/overview/app-news-update'
 import AppOrderTimeline from 'src/sections/overview/app-order-timeline'
 
+
 const FarmerLanding = () => (
     <Container maxWidth="xl">
         <Grid container spacing={4}>
@@ -15,17 +16,13 @@ const FarmerLanding = () => (
           <AppTasks
             title="Present Tasks"
             list={[
-              { id: '1', name: 'Create FireStone Logo' },
-              { id: '2', name: 'Add SCSS and JS files if required' },
-              { id: '3', name: 'Stakeholder Meeting' },
-              { id: '4', name: 'Scoping & Estimations' },
-              { id: '5', name: 'Sprint Showcase' },
-              { id: '5', name: 'Sprint Showcase' },
-              { id: '5', name: 'Sprint Showcase' },
-              { id: '5', name: 'Sprint Showcase' },
-              { id: '5', name: 'Sprint Showcase' },
-              { id: '5', name: 'Sprint Showcase' },
-              { id: '5', name: 'Sprint Showcase' },
+              { id: '1', name: 'Ramesh'  },
+              { id: '2', name: 'Suresh' },
+              { id: '3', name: 'Mahesh'  },
+              { id: '4', name: 'Vishal'  },
+              { id: '5', name: 'Mukesh' },
+              { id: '6', name: 'Suresh' },
+              { id: '7', name: 'Mahesh'  },
             ]}
           />
         </Grid>
@@ -65,7 +62,7 @@ const FarmerLanding = () => (
 
         
         </Grid>
-
+            
     </Container>
     
   )

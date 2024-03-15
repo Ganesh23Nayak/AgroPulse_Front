@@ -101,8 +101,10 @@ function TaskItem({ task, checked, onChange }) {
         <FormControlLabel
           control={<Checkbox checked={checked} onChange={onChange} />}
           label={task.name}
+
           sx={{ flexGrow: 1, m: 0 }}
         />
+        
 
         <IconButton color={open ? 'inherit' : 'default'} onClick={handleOpenMenu}>
           <Iconify icon="eva:more-vertical-fill" />
