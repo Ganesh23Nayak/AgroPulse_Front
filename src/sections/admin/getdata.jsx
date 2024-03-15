@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function getFarmerDb() {    
+export default async function getclientDb() {    
     try {
       const response = await axios.get("http://localhost:3000/api/clients");
   
@@ -11,13 +11,13 @@ export default async function getFarmerDb() {
       const jsonData = await response.json();
       
       if(jsonData.data) {
-        const users = await Promise.all(jsonData.data.map(async (farmer, index) => ({
-          fid: farmer.fid,
-          name: `${farmer.fname} ${farmer.lname}`,
+        const users = await Promise.all(jsonData.data.map(async (client, index) => ({
+          fid: client.fid,
+          name: `${client.fname} ${client.lname}`,
           avatarUrl: `/assets/images/avatars/avatar_${index + 1}.jpg`,
-          equipment: farmer.equipment,
-          rating: farmer.rating,
-          status: farmer.status
+          equipment: client.equipment,
+          rating: client.rating,
+          status: client.status
         })));
         return users;
       } 

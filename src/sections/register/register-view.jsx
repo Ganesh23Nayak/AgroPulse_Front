@@ -129,7 +129,7 @@ export default function RegisterView() {
     };
     console.log(data)
 
-    Axios.post("http://localhost:3000/addnew",data,{
+    Axios.post("http://localhost:3000/api/auth/addnew",data,{
       headers: {
 				'Content-Type': 'application/json',
 			},

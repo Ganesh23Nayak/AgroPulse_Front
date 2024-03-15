@@ -47,27 +47,26 @@ export default function LoginView() {
     console.log('Form Data:', data);
   
 
-		Axios.post("http://localhost:3000/login", data, {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		})
-			.then((response) => {
-				if (response.data) {
-					console.log('Login Successful');
-					localStorage.setItem('user', response.data);
-					// console.log(response.data);
-					// console.log(response.data.user);
-					// console.log(localStorage.getItem('user'));
-					if (response.data.user.role === 'LABOUR') {
-						navigate('/farmerdash');
-					// } else if (response.data.user.role === 'DOCTOR') {
-					// 	navigate('/Doctor');
-					} else {
-						navigate('/Administrator');
-					}
-				}
-			})
+		Axios.post("http://localhost:3000/api/auth/login", data, {
+    headers: {
+        'Content-Type': 'application/json',
+    },
+      })
+      .then((response) => {
+          if (response.status === 200) {
+              console.log('Login Successful');
+              localStorage.setItem('user', JSON.stringify(response.data));
+              const userData = response.data.user;
+              if (userData.role === 'LABOUR') {
+                  navigate('/farmerdash');
+              } else {
+                  navigate('/Administrator');
+              }
+          } else {
+              console.error('Login Failed:', response.statusText);
+              // Handle login failure here
+          }
+      })
 			.catch((error) => {
 				// Handle any errors
 				alert(error);
