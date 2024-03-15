@@ -1,3 +1,4 @@
+import Axios from 'axios';
 import React, { useState } from 'react';
 
 import { Box } from '@mui/system';
@@ -62,14 +63,40 @@ const handleButtonClick = async(e) => {
     const names = document.getElementsByName("name")[0].value;
     const phones = document.getElementsByName("phone")[0].value;
     const LandSize = document.getElementsByName("land_Size")[0].value;
+    const addres = document.getElementsByName("address")[0].value;
+    const passwords = document.getElementsByName("password")[0].value;
+    
+
 
     const data={
       email :emails,
       name : names,
       phone : phones,
-      land_Size : LandSize
+      password:passwords,
+      landsize :parseInt(LandSize, 10),
+      address : addres,
+      role:"CUSTOMER"
     };
+
     console.log('Form Data:', data);
+
+    Axios.post("http://localhost:3000/addnew",data,{
+      headers: {
+				'Content-Type': 'application/json',
+			},
+    })
+    .then((response) => {
+      if (response.data) {
+        alert('added user');
+        console.log(' Successful');
+      }
+    })
+    .catch((error) => {
+      // Handle any errors
+      alert('Failed');
+      console.error('Error:', error);
+    });
+
     handleClose();
   }
 
@@ -171,6 +198,17 @@ const handleButtonClick = async(e) => {
             autoFocus
             required
             margin="dense"
+            id="password"
+            name="password"
+            label="Password"
+            type="email"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            autoFocus
+            required
+            margin="dense"
             id="land_Size"
             name="land_Size"
             label="Enter Land Size"
@@ -178,6 +216,19 @@ const handleButtonClick = async(e) => {
             fullWidth
             variant="standard"
           />
+
+          <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="address"
+            name="address"
+            label="Enter Address"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
