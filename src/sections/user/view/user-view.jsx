@@ -137,11 +137,10 @@ export default function UserPage() {
                 onRequestSort={handleSort}
                 onSelectAllClick={handleSelectAllClick}
                 headLabel={[
-                  { id: 'name', label: 'Full Name', align: 'center', width: 200 },
-                  { id: 'contact', label: 'Contact', align: 'center', width: 200 },
-                  { id: 'address', label: 'Address', align: 'center', width: 350 },
-                  { id: 'totfarms', label: 'Farms', align: 'center' },
-                  { id: 'totsize', label: 'CFA (hectares)', align: 'center' },
+                  { id: 'name', label: 'Name' },
+                  { id: 'equipment', label: 'Equipment' },
+                  { id: 'rating', label: 'Ratings' },
+                  { id: 'isVerified', label: 'Verified', align: 'center' },
                   { id: 'status', label: 'Status' },
                   { id: '' },
                 ]}
